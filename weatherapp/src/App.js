@@ -5,8 +5,8 @@ import REACT_APP_API_KEY from './api/key'
 import { useState } from 'react'
 
 const Api = {
-  key: REACT_APP_API_KEY,
-  base: REACT_APP_API_URL
+  key: 'aa5b7a3a0232fedd69f3607217af0db9',
+  base: 'https://api.openweathermap.org/data/2.5/'
 }
 
 function App() {
@@ -21,7 +21,8 @@ function App() {
           setWeather(result)
           setQuery('')
           console.log(result)
-        })
+          console.log(weather)
+        });
     }
   }
 
@@ -61,7 +62,7 @@ function App() {
             </div>
             <div className='weather-box'>
               <div className='temp'>
-                {Math.random(weather.main.temp)}°F
+                {Math.round(weather.main.temp)}°F
               </div>
               <div className='weather'>{weather.weather[0].main}</div>
             </div>
