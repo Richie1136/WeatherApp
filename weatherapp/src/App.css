@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  background-image: url("./assets/cold.webp");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.5 ease-out;
 }
 
 .App-logo {
