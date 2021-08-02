@@ -4,6 +4,9 @@ import REACT_APP_API_URL from './api/key'
 import REACT_APP_API_KEY from './api/key'
 import { useState } from 'react'
 
+let fahrenheit = (9 / 5 + 32)
+
+
 const Api = {
   key: 'aa5b7a3a0232fedd69f3607217af0db9',
   base: 'https://api.openweathermap.org/data/2.5/'
@@ -21,7 +24,6 @@ function App() {
           setWeather(result)
           setQuery('')
           console.log(result)
-          console.log(weather)
         });
     }
   }
@@ -38,12 +40,7 @@ function App() {
     return `${day}  ${month} ${date} ${year}`
   }
   return (
-    <div className={
-      (typeof weather.main !== 'undefined')
-        ? ((weather.main.temp > 50)
-          ? 'App warm'
-          : 'App')
-        : 'App'}>
+    <div className={(typeof weather.main != "undefined") ? ((weather.main.temp * 9 / 5 + 32 > 16) ? 'App warm' : 'App') : 'App'}>
       <main>
         <div className='search-box'>
           <input type='text'
@@ -69,8 +66,8 @@ function App() {
           </div>
         ) : ('')}
       </main>
-    </div >
+    </div>
   );
 }
 
-export default App;
+export default App
