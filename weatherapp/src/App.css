@@ -61,6 +61,46 @@ main {
   }
 }
 
-.location {
+.location-box .location {
   color: white;
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.7);
+}
+
+.location-box .date {
+  color: white;
+  font-size: 25px;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+  text-shadow: 2px 2px rgba(50, 50, 70, 0.7);
+  margin-top: 20px;
+}
+
+.weather {
+  text-align: center;
+}
+
+.weather-box .temp {
+  position: relative;
+  display: inline-block;
+  margin: 30px auto;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 18px;
+  padding: 15px 25px;
+  color: white;
+  font-size: 100px;
+  font-weight: 900;
+  text-shadow: 3px 6px rgba(50, 50, 70, 0.7);
+  text-align: center;
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.weather-box .weather {
+  color: white;
+  font-size: 46px;
+  font-weight: 700;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.7);
 }
