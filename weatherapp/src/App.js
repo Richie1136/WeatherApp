@@ -3,6 +3,9 @@ import './App.css';
 import REACT_APP_API_URL from './api/key'
 import REACT_APP_API_KEY from './api/key'
 import { useState } from 'react'
+import { Dimmer, Loader } from 'semantic-ui-react'
+import Weather from './components/weather'
+import Forecast from './components/forecast'
 
 let fahrenheit = (9 / 5 + 32)
 
@@ -16,9 +19,11 @@ function App() {
   const [query, setQuery] = useState('')
   const [weather, setWeather] = useState({})
 
-  const search = (event) => {
+
+
+  const search = async (event) => {
     if (event.key === "Enter") {
-      fetch(`${Api.base}weather?q=${query}&units=metric&APPID=${Api.key}`)
+      await fetch(`${Api.base}weather?q=${query}&units=metric&APPID=${Api.key}`)
         .then(res => res.json())
         .then(result => {
           setWeather(result)
@@ -40,7 +45,7 @@ function App() {
     return `${day}  ${month} ${date} ${year}`
   }
   return (
-    <div className={(typeof weather.main != "undefined") ? ((weather.main.temp * 9 / 5 + 32 > 16) ? 'App warm' : 'App') : 'App'}>
+    <div className={(typeof weather.main != "undefined") ? ((weather.main.temp * 9 / 5 + 32 > 50) ? 'App warm' : 'App') : 'App'}>
       <main>
         <div className='search-box'>
           <input type='text'
@@ -63,10 +68,13 @@ function App() {
               </div>
               <div className='weather'>{weather.weather[0].main}</div>
             </div>
+            <div className='humidity'>{weather.main.humidity}% Humidity</div>
+            <div className='sunrise'>Sunrise: {new Date(weather.sys.sunrise * 1000).toLocaleTimeString('en-IN')}</div>
+            <div className='sunset'>Sunset: {new Date(weather.sys.sunset * 1000).toLocaleTimeString('en-IN')}</div>
           </div>
         ) : ('')}
       </main>
-    </div>
+    </div >
   );
 }
 
