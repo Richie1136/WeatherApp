@@ -3,11 +3,7 @@ import './App.css';
 import REACT_APP_API_URL from './api/key'
 import REACT_APP_API_KEY from './api/key'
 import { useState } from 'react'
-import { Dimmer, Loader } from 'semantic-ui-react'
-import Weather from './components/weather'
-import Forecast from './components/forecast'
 
-let fahrenheit = (9 / 5 + 32)
 
 
 const Api = {
@@ -69,12 +65,13 @@ function App() {
               <div className='weather'>{weather.weather[0].main}</div>
             </div>
             <div className='humidity'>{weather.main.humidity}% Humidity</div>
-            <div className='sunrise'>Sunrise: {new Date(weather.sys.sunrise * 1000).toLocaleTimeString('en-IN')}</div>
-            <div className='sunset'>Sunset: {new Date(weather.sys.sunset * 1000).toLocaleTimeString('en-IN')}</div>
+            <div className='sunrise'>Sunrise: {new Date(weather.sys.sunrise * 1000).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' })}
+            </div>
+            <div className='sunset'>Sunset: {new Date(weather.sys.sunset * 1000).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' })}</div>
           </div>
         ) : ('')}
       </main>
-    </div >
+    </div>
   );
 }
 

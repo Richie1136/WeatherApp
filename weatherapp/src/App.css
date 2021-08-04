@@ -39,7 +39,7 @@ main {
   border-radius: 0px, 0px, 14px, 14px;
   margin-top: -25px;
   box-shadow: 0px 6px rgba(0, 0, 0, 0.4);
-  color: white;
+  color: black;
   font-size: 18px;
   transition: 0.5s ease;
 }
@@ -118,6 +118,8 @@ main {
   font-size: 32px;
   font-weight: 400;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.7);
+  display: flex;
+  justify-content: flex-start;
 }
 
 .sunset {
@@ -125,4 +127,6 @@ main {
   font-size: 32px;
   font-weight: 400;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.7);
+  display: flex;
+  justify-content: flex-end;
 }
