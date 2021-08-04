@@ -1,7 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-import REACT_APP_API_URL from './api/key'
-import REACT_APP_API_KEY from './api/key'
 import { useState } from 'react'
 
 
