@@ -1,11 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react'
 
 
 
+
 const Api = {
-  key: 'aa5b7a3a0232fedd69f3607217af0db9',
+  key: process.env.REACT_APP_WEATHER_API_KEY,
   base: 'https://api.openweathermap.org/data/2.5/'
 }
 
