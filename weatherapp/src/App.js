@@ -35,6 +35,7 @@ function App() {
     let date = d.getDate()
     let month = months[d.getMonth()]
     let year = d.getFullYear()
+    console.log(days)
 
     return `${day}  ${month} ${date} ${year}`
   }
